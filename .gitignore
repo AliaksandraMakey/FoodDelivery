@@ -1,0 +1,38 @@
+### Xcode •gitignore ###
+
+## User settings
+
+xcuserdata/
+
+# CocoaPods
+Pods/
+Podfile.look
+
+
+## Build generated
+build/
+DerivedData/
+
+## Xcode 8 and earlier
+*.xcscmblueprint
+*.xccheckout
+
+### Xcode Patch ###
+*.xcodeproj/*
+!*.xcodeproj/project.pbxproj
+* xcodenroj/xcshareddata/
+!*.xcworkspace/contents.xcworkspacedata
+/*.gcno
+**/xcshareddata/WorkspaceSettings.settings
+
+# Ignore Mac DS_Store files
+.DS_Store
+*.xcuserstate
+Podfile.lock
+
+
+
+
+
+
+
