@@ -7,38 +7,37 @@
 
 import UIKit
 
-enum CoordinatorType {
-    case app, onboarding, home, order, list, profile
-}
-protocol CoordinatorProtocol: AnyObject {
-    var type: CoordinatorType { get }
-    // child
-    var childCoordinators: [CoordinatorProtocol] { get set }
-    //navigation
-    var navigationController: UINavigationController? { get set }
-    // child coordinator finishes
-    var finishDelegat: CoordinatorFinishDelegate? { get set }
+//MARK: - Coordinator
+class Coordinator: CoordinatorProtocol {
+    var type: CoordinatorType
     
-    func start()
-    func finish()
-}
-extension CoordinatorProtocol {
-    /// Adds a child coordinator to the array of child coordinators.
-    ///
-    /// - Parameter childCoordinator: The child coordinator to be added.
-    func addChildCoordinator(_ childCoordinator: CoordinatorProtocol) {
-        childCoordinators.append(childCoordinator)
+    var childCoordinators: [CoordinatorProtocol] = []
+    
+    var navigationController: UINavigationController?
+    
+    var finishDelegat: CoordinatorFinishDelegate?
+
+    init(type: CoordinatorType,
+         childCoordinators: [CoordinatorProtocol] = [CoordinatorProtocol](),
+         navigationController: UINavigationController,
+         finishDelegat: CoordinatorFinishDelegate? = nil) {
+        self.type = type
+        self.childCoordinators = childCoordinators
+        self.navigationController = navigationController
+        self.finishDelegat = finishDelegat
     }
-    /// Removes a child coordinator from the array of child coordinators.
-    ///
-    /// - Parameter childCoordinator: The child coordinator to be removed.
-    func removeChildCoordinator(_ childCoordinator: CoordinatorProtocol) {
-        childCoordinators = childCoordinators.filter{ $0 !== childCoordinator }
+    deinit {
+        print("Coordinator deinited \(type)")
+        childCoordinators.forEach{ $0.finishDelegat = nil }
+            childCoordinators.removeAll()
     }
-}
-protocol CoordinatorFinishDelegate {
-    /// Called when a child coordinator finishes its work.
-    ///
-    /// - Parameter childCoordinator: The child coordinator that finished its work.
-    func coordinatorFinish(childCoordinators: CoordinatorProtocol)
+    func start() {
+        print("Coordinator start")
+    }
+    
+    func finish() {
+        print("Coordinator finish")
+    }
+    
+    
 }
