@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		856D40B32BF7EC7D008B7B2B /* UIFonts+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856D40B22BF7EC7D008B7B2B /* UIFonts+Extensions.swift */; };
 		85AD4DC12BAE1BAB00AAC387 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AD4DC02BAE1BAB00AAC387 /* AppDelegate.swift */; };
 		85AD4DC32BAE1BAB00AAC387 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AD4DC22BAE1BAB00AAC387 /* SceneDelegate.swift */; };
 		85AD4DC52BAE1BAB00AAC387 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AD4DC42BAE1BAB00AAC387 /* ViewController.swift */; };
@@ -48,6 +49,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		856D40B22BF7EC7D008B7B2B /* UIFonts+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFonts+Extensions.swift"; sourceTree = "<group>"; };
 		85AD4DBD2BAE1BAB00AAC387 /* FoodDelivery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodDelivery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85AD4DC02BAE1BAB00AAC387 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		85AD4DC22BAE1BAB00AAC387 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -100,6 +102,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		856D40B12BF7EC50008B7B2B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				856D40B22BF7EC7D008B7B2B /* UIFonts+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		85AD4DB42BAE1BAB00AAC387 = {
 			isa = PBXGroup;
 			children = (
@@ -162,6 +172,7 @@
 		85C66ED22BBA06BC00F77AB5 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				856D40B12BF7EC50008B7B2B /* Extensions */,
 				85C66ED32BBA06CC00F77AB5 /* Roboto */,
 			);
 			path = Fonts;
@@ -332,6 +343,7 @@
 			files = (
 				85AD4DC52BAE1BAB00AAC387 /* ViewController.swift in Sources */,
 				85AD4DC12BAE1BAB00AAC387 /* AppDelegate.swift in Sources */,
+				856D40B32BF7EC7D008B7B2B /* UIFonts+Extensions.swift in Sources */,
 				85AD4DC32BAE1BAB00AAC387 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
