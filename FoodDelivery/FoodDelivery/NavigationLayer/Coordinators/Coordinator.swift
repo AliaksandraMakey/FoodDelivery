@@ -16,7 +16,7 @@ class Coordinator: CoordinatorProtocol {
     var navigationController: UINavigationController?
     
     var finishDelegat: CoordinatorFinishDelegate?
-
+    
     init(type: CoordinatorType,
          childCoordinators: [CoordinatorProtocol] = [CoordinatorProtocol](),
          navigationController: UINavigationController,
@@ -29,7 +29,7 @@ class Coordinator: CoordinatorProtocol {
     deinit {
         print("Coordinator deinited \(type)")
         childCoordinators.forEach{ $0.finishDelegat = nil }
-            childCoordinators.removeAll()
+        childCoordinators.removeAll()
     }
     func start() {
         print("Coordinator start")
@@ -38,6 +38,4 @@ class Coordinator: CoordinatorProtocol {
     func finish() {
         print("Coordinator finish")
     }
-    
-    
 }

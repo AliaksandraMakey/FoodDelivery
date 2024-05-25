@@ -8,11 +8,13 @@
 import UIKit
 //MARK: - CoordinatorType
 enum CoordinatorType {
+//    HomeCoordinator
     case app, onboarding, home, order, list, profile
 }
 //MARK: - CoordinatorProtocol
-#warning("AnyObject CoordinatorProtocol")
+
 protocol CoordinatorProtocol: AnyObject {
+    // type
     var type: CoordinatorType { get }
     // child
     var childCoordinators: [CoordinatorProtocol] { get set }

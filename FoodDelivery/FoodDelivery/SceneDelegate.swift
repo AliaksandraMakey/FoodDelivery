@@ -22,7 +22,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // 2. Создание UIWindow с использованием конструктора который принимает сцену
         let window = UIWindow(windowScene: windowScene)
         
-       // 3. Программно создаем основной контроллер и интетрируем в него NavigationController
+       // 3. Программно создаем основной контроллер и передаем в него NavigationController
         let navigationController = UINavigationController()
         
         // 4. Определяем navigationController as rootViewController

@@ -1,25 +1,26 @@
 //
-//  OnboardingCoordinator.swift
+//  ProfileCoordinator.swift
 //  FoodDelivery
 //
-//  Created by Александра Макей on 18.05.2024.
+//  Created by Александра Макей on 25.05.2024.
 //
 
 import UIKit
 
-//MARK: - OnboardingCoordinator
-class OnboardingCoordinator: Coordinator {
+//MARK: - ProfileCoordinator
+class ProfileCoordinator: Coordinator {
     
     override func start() {
         let vc = ViewController()
+        vc.view.backgroundColor = .green
         navigationController?.pushViewController(vc, animated: true)
     }
     override func finish() {
-        print("OnboardingCoordinatorFinished")
+        print("ProfileCoordinator Finished")
     }
 }
 ////MARK: - Navigation methods
-//private extension OnboardingCoordinator {
+//private extension ProfileCoordinator {
 //    func showOnboardingFlow() {
 //
 //    }
