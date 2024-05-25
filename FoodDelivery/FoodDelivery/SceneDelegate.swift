@@ -10,7 +10,7 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-
+    var coordinator: AppCoordinator?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
@@ -22,9 +22,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // 2. Создание UIWindow с использованием конструктора который принимает сцену
         let window = UIWindow(windowScene: windowScene)
         
-       // 3. Программно создаем основной контроллер и интетрируем в него NavigationController
-        let viewController = ViewController()
-        let navigationController = UINavigationController(rootViewController: viewController)
+       // 3. Программно создаем основной контроллер и передаем в него NavigationController
+        let navigationController = UINavigationController()
         
         // 4. Определяем navigationController as rootViewController
         window.rootViewController = navigationController
@@ -32,6 +31,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // 5. Настройка window
         self.window = window
         window.makeKeyAndVisible()
+        let appCoordinator = AppCoordinator(type: .app, navigationController: navigationController)
+        appCoordinator.start()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
